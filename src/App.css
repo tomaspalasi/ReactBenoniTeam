@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "ReadexPro-Medium";
+  src: url("../public/ReadexPro-Medium.ttf");}
+
+.contenedor {
+  font-family: "ReadexPro-Medium";
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 2em;
+  margin-left: 2em;
+}
+
+.logo {
+  width: 15em;
+}
