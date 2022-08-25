@@ -1,4 +1,7 @@
 import './App.css';
+import 'core-js/actual';
+import Footer from "./assets/pages/footer";
+
 
 function App() {
   let logo = "benoni.png";
@@ -7,15 +10,16 @@ function App() {
   let descripcion = "Bienvenidos a BENONI. Acá vas a poder explotar todo tu potencial y vos vas a decidir que orientación le vas a dar a tu planificación.";
 
   return (
-    <div className= "contenedor">
-      <div className="logo-benoni">
-        <img src= {logo} alt={nombreLogo} className="logo"/>
-      </div>
-      <div className="contenido">
-        <h1 className="titulo">{titulo}</h1>
-        <p className="descripcion">{descripcion}</p>
-      </div>
-    </div>
+        // <div className= "contenedor">
+        //   <div className="logo-benoni">
+        //     <img src= {logo} alt={nombreLogo} className="logo"/>
+        //   </div>
+        //   <div className="contenido">
+        //     <h1 className="titulo">{titulo}</h1>
+        //     <p className="descripcion">{descripcion}</p>
+        //   </div>
+        // </div>
+      <Footer/>
   );
 }
 
