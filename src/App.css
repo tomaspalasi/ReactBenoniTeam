@@ -52,3 +52,13 @@
 .logo {
   width: 18em;
 }
+
+.navbarBackground{
+  font-family: "ReadexPro-Medium";
+  background-color: #D6BFBF;
+}
+
+.logoNav {
+  width: 6em;
+  margin-right: 2em;
+}

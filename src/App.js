@@ -1,8 +1,8 @@
 import './App.css';
 import 'core-js/actual';
-import Footer from "./assets/pages/footer";
-import Header from './assets/pages/header';
-import Body from './assets/pages/body';
+import Footer from "./assets/components/footer";
+import Header from './assets/components/header';
+import Body from './assets/components/body';
 
 
 function App() {
