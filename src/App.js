@@ -1,11 +1,12 @@
 import './App.css';
 import 'core-js/actual';
-import Footer from "./assets/components/footer";
-import Header from './assets/components/header';
-import Body from './assets/components/body';
+import Footer from "./components/Footer";
+import Header from './components/Header/Header';
+import Body from './components/Body';
 
 
 function App() {
+
   return (
     <div>
       <Header/>
