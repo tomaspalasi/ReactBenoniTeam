@@ -41,6 +41,7 @@
   font-family: "ReadexPro-Medium";
   src: url("../public/ReadexPro-Medium.ttf");}
 
+
 .contenedor {
   font-family: "ReadexPro-Medium";
   display: grid;
@@ -55,7 +56,7 @@
 
 .navbarBackground{
   font-family: "ReadexPro-Medium";
-  background-color: #D6BFBF;
+  background-color: whitesmoke;
 }
 
 .logoNav {
