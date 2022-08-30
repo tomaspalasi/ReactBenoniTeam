@@ -1,0 +1,15 @@
+.navbarBackground{
+    font-family: "ReadexPro-Medium";
+    background-color: whitesmoke;
+  }
+  
+  .logoNav {
+    width: 6em;
+    margin-right: 2em;
+  }
+  
+  .logoCart {
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+  }

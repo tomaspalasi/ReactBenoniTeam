@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from '../../components/Header/img/benoni.png'
 import Carrito from "./Carrito";
+import './css/header.css';
 
 
 const Header = () => {
