@@ -4,8 +4,8 @@ class Remera extends Component {
     render (){
         return (
             <li>
-                <a href="#">{this.props.nombre}</a>
-                </li>
+                <p>{this.props.nombre}</p>
+            </li>
             )
     }
 }

@@ -2,7 +2,7 @@ import './App.css';
 import 'core-js/actual';
 import Footer from "./components/Footer";
 import Header from './components/Header/Header';
-import Body from './components/Body';
+import Body from './components/Body/Body';
 
 
 function App() {

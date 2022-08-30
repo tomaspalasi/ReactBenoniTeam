@@ -1,18 +1,19 @@
 import React from "react";
 import Logo from '../../components/Header/img/benoni.png'
-import Cart from '../../components/Header/img/carritoVacio.png'
+import Carrito from "./Carrito";
+
 
 const Header = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbarBackground">
                 <div className="container-fluid">
-                    <a href="#">
+                    <p>
                         <img className="logoNav"src={Logo} alt="logoBenoni"/>
-                    </a>
-                    <a className="navbar-brand" href="#">
+                    </p>
+                    <p className="navbar-brand">
                         BENONI TEAM MERCH
-                    </a>
+                    </p>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -26,12 +27,10 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-link active" aria-current="page" href="#">
+                            <p className="nav-link active" aria-current="page">
                                SHOP
-                            </a>
-                            <a href="#">
-                            <img className="logoCart"src={Cart} alt="logoCarrito"/>
-                            </a>
+                            </p>
+                            <Carrito/>
                         </div>
                     </div>
                 </div>
