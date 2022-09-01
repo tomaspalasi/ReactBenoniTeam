@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import Prenda from './Prendas/Prendas'
+import React, {useState} from 'react';
+import Prenda from './Prendas/Prendas';
 import '../Body/Prendas/prendas.css';
 
 const Productos = () => {
-    const [prendas, setPrendas] = useState([
+    const [prendas] = useState ([
         {
             id: 1,
             nombre: "BENONI",
@@ -36,6 +36,7 @@ const Productos = () => {
         }
     ]
     )
+    
 
   return (
     <div>

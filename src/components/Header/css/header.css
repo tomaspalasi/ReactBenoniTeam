@@ -13,3 +13,7 @@
     height: 2em;
     cursor: pointer;
   }
+
+  .nav-link {
+    cursor: pointer;
+  }

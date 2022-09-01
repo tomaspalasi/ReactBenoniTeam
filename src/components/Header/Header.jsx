@@ -28,10 +28,16 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <p className="nav-link active" aria-current="page">
+                            <p className="nav-link active" href="#" aria-current="page">
                                SHOP
                             </p>
-                            <Carrito/>
+                            <p className="nav-link" href="#">
+                               CARRITO
+                            </p>
+                            <p className="nav-link" href="#">
+                               CHECK OUT
+                            </p>
+                            <Carrito href="#"/>
                         </div>
                     </div>
                 </div>
