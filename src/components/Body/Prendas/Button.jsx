@@ -18,7 +18,7 @@ function AgregadoAlCarrito (){
 
 const SuperButton = () => {
 
-    let stock= 20;
+    let stock= 15;
     let [cantidad, setCantidad] = useState(0);;
     let cantidadRemeras = cantidad;
     
