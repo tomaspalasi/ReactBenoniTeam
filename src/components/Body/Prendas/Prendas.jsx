@@ -1,4 +1,5 @@
 import React from "react";
+import SuperButton from "./Button";
 
 const Prenda = (props) =>{
     return (
@@ -8,6 +9,7 @@ const Prenda = (props) =>{
             </figure>
             <h3>{props.nombre}</h3>
             <h4>${props.precio}</h4>
+            <SuperButton/>
         </div>
     )
 }

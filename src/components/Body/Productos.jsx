@@ -36,18 +36,17 @@ const Productos = () => {
         }
     ]
     )
-    
 
   return (
     <div>
         {prendas.map((prenda) => {
             return (
-                <Prenda
-                key={prenda.id}
-                img={prenda.img}
-                nombre={prenda.nombre}
-                precio={prenda.precio}
-                />
+                    <Prenda
+                    key={prenda.id}
+                    img={prenda.img}
+                    nombre={prenda.nombre}
+                    precio={prenda.precio}
+                    />
             )
         })}
     </div>
