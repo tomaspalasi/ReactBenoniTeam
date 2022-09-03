@@ -10,8 +10,8 @@ function AgregadoAlCarrito (){
             showConfirmButton: false,
             timer: 3000,
             timerProgressBar: true,
-            color: "whitesmoke",
-            background: "rgb(32, 32, 32)",
+            color: "black",
+            background: "#f9333b",
         })
     )
 }
