@@ -1,6 +1,7 @@
 import React from "react";
 import Productos from './Productos';
 
+
 const Body = () => {
     let titulo = "BENONI TEAM - C.E.A.R.D.";
     let descripcion = "Bienvenidos a la tienda de BENONI. Acá vas a poder conseguir toda la merch del equipo de BENONI.";

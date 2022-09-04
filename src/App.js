@@ -1,6 +1,6 @@
 import './App.css';
 import 'core-js/actual';
-import Footer from "./components/Foter";
+import Footer from "./components/Footer/Foter";
 import Header from './components/Header/Header';
 import Body from './components/Body/Body';
 

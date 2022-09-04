@@ -44,8 +44,6 @@
 
 .contenedor {
   font-family: "ReadexPro-Medium";
-  display: grid;
-  grid-template-columns: auto auto;
   margin-top: 2em;
   margin-left: 2em;
 }
