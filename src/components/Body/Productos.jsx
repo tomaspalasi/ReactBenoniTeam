@@ -53,18 +53,18 @@ const Productos = () => {
     <div className='boxRemeras'>
         {prendas.map((prenda) => {
             return (
-                    <div className='boxPrenda' key={prenda.id}>
+                <div className='boxPrenda' key={prenda.id}>
                     <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
-                    <div className='remera'>
-                        <Prenda
-                        img1={prenda.img1}
-                        img2={prenda.img2}
-                        nombre={prenda.nombre}
-                        precio={prenda.precio}
-                        stock={prenda.stock}
-                        />
-                    </div>
-                    </div>
+                        <div className='remera'>
+                            <Prenda
+                            img1={prenda.img1}
+                            img2={prenda.img2}
+                            nombre={prenda.nombre}
+                            precio={prenda.precio}
+                            stock={prenda.stock}
+                            />
+                        </div>
+                </div>
             )
         })}
     </div>
