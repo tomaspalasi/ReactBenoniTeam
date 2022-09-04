@@ -1,11 +1,19 @@
-import React, {useState} from 'react';
 import Prenda from './Prendas/Prendas';
 import '../Body/Prendas/css/prendas.css';
 
 
-
 const Productos = () => {
-    const [prendas] = useState ([
+    const promesa = new Promise ((resolve) => {
+        setTimeout (()=>{
+            resolve (prendas)
+        }, 2000);
+    })
+
+    promesa.then((respuesta) =>{
+        console.log (respuesta)
+    })
+
+    const prendas = [
         {
             id: 1,
             nombre: "BENONI",
@@ -47,28 +55,26 @@ const Productos = () => {
             stock: 10,
         }
     ]
-    )
 
-  return (
-    <div className='boxRemeras'>
-        {prendas.map((prenda) => {
-            return (
-                <div className='boxPrenda' key={prenda.id}>
-                    <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
-                        <div className='remera'>
-                            <Prenda
-                            img1={prenda.img1}
-                            img2={prenda.img2}
-                            nombre={prenda.nombre}
-                            precio={prenda.precio}
-                            stock={prenda.stock}
-                            />
-                        </div>
-                </div>
+    return (
+              <div className='boxRemeras'>
+                  {prendas.map((prenda) => {
+                      return (
+                          <div className='boxPrenda' key={prenda.id}>
+                                  <div className='remera'>
+                                      <Prenda
+                                      img1={prenda.img1}
+                                      img2={prenda.img2}
+                                      nombre={prenda.nombre}
+                                      precio={prenda.precio}
+                                      stock={prenda.stock}
+                                      />
+                                  </div>
+                          </div>
+                      )
+                  })}
+              </div>
             )
-        })}
-    </div>
-  )
 }
 
 export default Productos;

@@ -4,6 +4,11 @@
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    filter: drop-shadow(5px 5px 5px #b2b2b2);
+}
+
+#productos {
+  visibility: hidden;
 }
 
 .boxRemeras {
@@ -15,7 +20,7 @@
 .boxPrenda {
     border: solid .2em grey;
     filter: drop-shadow(5px 5px 5px #dadada);
-    background-color: whitesmoke;
+    background-color: rgb(206 193 192);
     margin-top: .2em;
     margin-bottom: .2em;
 }
@@ -26,9 +31,12 @@
 
 .lds-ring {
     display: inline-block;
-    position: relative;
+    position: absolute;
+    z-index: -1;
     width: 80px;
     height: 80px;
+    margin-left: 40%;
+    margin-top: 25%;
   }
   .lds-ring div {
     box-sizing: border-box;
