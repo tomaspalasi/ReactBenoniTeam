@@ -45,7 +45,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <div className='itemCount'>
                 <input className='btnCount' type="button" value="-" onClick={() => {
                     restarCantidad(cantidad - 1)}}/>
-                <input className='textoCant' type="text" value={cantidad}/>
+                <h5 className='textoCant'>{cantidad}</h5>
                 <input className='btnCount' type="button" value="+" onClick={() => {
                     sumarCantidad(cantidad + 1)}}/>
             </div>
