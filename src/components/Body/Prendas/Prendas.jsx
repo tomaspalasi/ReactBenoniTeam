@@ -12,7 +12,7 @@ const Prenda = (props) =>{
             loads[i].style.display = 'none';
             }
 
-    }, 1000);
+    }, 1100);
 
     setTimeout(() =>{
         const prods = document.querySelectorAll("#productos")
@@ -21,7 +21,7 @@ const Prenda = (props) =>{
             prods[i].style.visibility = 'visible';
         }
         
-    }, 1500);
+    }, 1150);
 
 
     return (
