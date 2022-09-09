@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-import './css/boton.css'
+import '../css/boton.css'
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [cantidad, setCantidad] = useState (initial);

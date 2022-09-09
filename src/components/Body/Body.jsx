@@ -1,5 +1,6 @@
 import React from "react";
-import Productos from './Productos';
+import PrendaDetailContainer from "./Prendas/containers/PrendaDetailContainer";
+import PrendaListContainer from './Prendas/containers/PrendaListContainer';
 
 
 const Body = () => {
@@ -12,7 +13,8 @@ const Body = () => {
           <h1 className="titulo">{titulo}</h1>
           <p className="descripcion">{descripcion}</p>
           <ul>
-            <Productos />
+            <PrendaListContainer />
+            <PrendaDetailContainer />
           </ul>
         </div>
       </div>
