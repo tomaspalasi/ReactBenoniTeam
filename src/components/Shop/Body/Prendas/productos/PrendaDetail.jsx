@@ -1,12 +1,11 @@
 import React from "react";
 import ItemCount from "./PrendasCount";
-import { remeras } from "../../../../mock/remeras";
+import { remeras } from "../../../../../mock/remeras";
 import "../css/prendas.css";
 import "../css/boton.css";
 
 const PrendaDetail = () => {
-  
-  const remeraDetalle = remeras.find(p => p.id === 5)
+  const remeraDetalle = remeras.find(p => p.id === 1)
   
 
   return ( 
@@ -14,7 +13,7 @@ const PrendaDetail = () => {
       <div className="prendaDetail">
         <div className="remerasBox">
           <div id="loading">
-            <div className="lds-ring">
+            <div className="lds-ringDetalle">
               <div></div>
               <div></div>
               <div></div>

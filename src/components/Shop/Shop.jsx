@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../Header/Header";
-import Body from "../Body/Body";
+import BodyShop from "../Shop/Body/BodyShop";
 import Footer from "../Footer/Foter";
 
 const Shop = () => {
   return (
     <div>
         <Header />
-        <Body />
+        <BodyShop />
         <Footer />
     </div>
   );

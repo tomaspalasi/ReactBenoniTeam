@@ -1,5 +1,5 @@
 import React from "react";
-import { remeras } from "../../../../mock/remeras";
+import { remeras } from "../../../../../mock/remeras";
 import "../css/prendas.css";
 import Prenda from "../productos/Prendas"
 

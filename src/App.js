@@ -4,7 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Index from './components/Index/Index';
 import Shop from './components/Shop/Shop';
 import Cart from './components/Cart/Cart';
-import PrendaDetailContainer from './components/Body/Prendas/containers/PrendaDetailContainer';
+import PrendaDetailContainer from './components/Shop/Body/Prendas/containers/PrendaDetailContainer';
 
 
 function App() {

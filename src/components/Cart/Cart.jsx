@@ -1,6 +1,6 @@
 import React from "react";
 import Header from '../Header/Header'
-import Body from '../Body/Body'
+import BodyCart from './Body/BodyCart'
 import Footer from '../Footer/Foter'
 
 const Cart = () => {
@@ -8,7 +8,7 @@ const Cart = () => {
     return (
     <div>
         <Header/>
-        <Body/>
+        <BodyCart/>
         <Footer/>
     </div>
     )
