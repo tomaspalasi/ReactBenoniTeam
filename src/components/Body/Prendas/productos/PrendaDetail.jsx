@@ -28,6 +28,7 @@ const PrendaDetail = () => {
         </div>
         <h3>{remeraDetalle.nombre}</h3>
         <h4>${remeraDetalle.precio}</h4>
+        <h4>Tamaño: {remeraDetalle.tamaño}</h4>
         <ItemCount stock={remeraDetalle.stock} initial={0} onAdd={0} />
       </div>
     </div>

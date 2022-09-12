@@ -1,0 +1,17 @@
+ .contenedorIndex {
+    font-family: "ReadexPro-Medium";
+    margin-top: 2em;
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+.logoBodyIndex {
+    width: 30em;
+}
+
+.contLogoBodyIndex {
+    display: flex;
+    justify-content: center;
+}

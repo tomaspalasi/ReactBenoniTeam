@@ -1,18 +1,21 @@
 import './App.css';
 import 'core-js/actual';
-import Footer from "./components/Footer/Foter";
-import Header from './components/Header/Header';
-import Body from './components/Body/Body';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Index from './components/Index/Index';
+import Shop from './components/Shop/Shop';
+import Cart from './components/Cart/Cart';
 
 
 function App() {
 
   return (
-    <div>
-      <Header/>
-      <Body/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/index' element={<Index/>}/>
+        <Route exact path='/shop' element={<Shop/>}/>
+        <Route exact path='/carrito' element={<Cart/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -2,6 +2,8 @@ import React from "react";
 import Logo from '../../components/Header/img/benoni.png'
 import Carrito from "./Carrito";
 import './css/header.css';
+import {Link} from "react-router-dom";
+
 
 const Header = () => {
     return (
@@ -27,16 +29,15 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <p className="nav-link active" href="#" aria-current="page">
+                            <Link className="nav-link" to={"/index"} aria-current="page">
+                               INICIO
+                            </Link>
+                            <Link className="nav-link" to={"/shop"}>
                                SHOP
-                            </p>
-                            <p className="nav-link" href="#">
-                               CARRITO
-                            </p>
-                            <p className="nav-link" href="#">
-                               CHECK OUT
-                            </p>
-                            <Carrito href="#"/>
+                            </Link>
+                            <Link className="nav-link" to={"/carrito"}>
+                                <Carrito/>
+                            </Link>
                         </div>
                     </div>
                 </div>

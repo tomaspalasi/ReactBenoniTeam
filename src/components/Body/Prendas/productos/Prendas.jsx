@@ -1,9 +1,6 @@
 import React from "react";
 import "../css/prendas.css";
 import "../css/boton.css";
-// import PrendaDetail from "../productos/PrendaDetail";
-
-
 
 const Prenda = (item) => {
   setTimeout(() => {
@@ -22,7 +19,12 @@ const Prenda = (item) => {
     }
   }, 1150);
 
-  
+  const verDetalle = () => {
+    console.log(item.nombre)
+    return(
+      item.nombre
+    )
+  }
 
   return (
     <div>
@@ -40,9 +42,8 @@ const Prenda = (item) => {
         </figure>
       </div>
       <h3 className="tituloRemera">{item.nombre}</h3>
-      {/* <PrendaDetail /> */}
       <div className="itemCount">
-        <input className="btnDetalle" type="button" value="Ver detalle del Producto" key={item.id}/>
+        <input className="btnDetalle" type="button" value="Ver detalle del Producto" onClick={verDetalle}/>
       </div>
     </div>
   );
