@@ -10,9 +10,9 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbarBackground">
                 <div className="container-fluid">
-                    <p>
+                    <Link to={"/"}>
                         <img className="logoNav"src={Logo} alt="logoBenoni"/>
-                    </p>
+                    </Link>
                     <p className="navbar-brand">
                         BENONI TEAM MERCH
                     </p>

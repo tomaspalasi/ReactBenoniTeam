@@ -50,7 +50,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                     sumarCantidad(cantidad + 1)}}/>
             </div>
             <div className='itemCount'>
-                <input className='btnCompra' type="button" value="Agregar al Carrito" onClick={agregarItems}/>
+                <input className='btnCompra' type="button" value="AGREGAR AL CARRITO" onClick={agregarItems}/>
             </div>
         </div>
     )

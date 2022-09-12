@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Index from './components/Index/Index';
 import Shop from './components/Shop/Shop';
 import Cart from './components/Cart/Cart';
+import PrendaDetailContainer from './components/Body/Prendas/containers/PrendaDetailContainer';
 
 
 function App() {
@@ -11,8 +12,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path='/index' element={<Index/>}/>
+        <Route exact path='/' element={<Index/>}/>
         <Route exact path='/shop' element={<Shop/>}/>
+        <Route exact path='/shop/prendadetalle' element={<PrendaDetailContainer/>}/>
         <Route exact path='/carrito' element={<Cart/>}/>
       </Routes>
     </BrowserRouter>

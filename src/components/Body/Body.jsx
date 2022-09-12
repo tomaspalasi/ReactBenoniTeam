@@ -1,5 +1,4 @@
 import React from "react";
-import PrendaDetailContainer from "./Prendas/containers/PrendaDetailContainer";
 import PrendaListContainer from './Prendas/containers/PrendaListContainer';
 
 
@@ -14,7 +13,6 @@ const Body = () => {
           <p className="descripcion">{descripcion}</p>
           <ul>
             <PrendaListContainer />
-            <PrendaDetailContainer />
           </ul>
         </div>
       </div>

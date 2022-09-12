@@ -6,7 +6,7 @@ import "../css/boton.css";
 
 const PrendaDetail = () => {
   
-  const remeraDetalle = remeras.find(p => p.id === 1)
+  const remeraDetalle = remeras.find(p => p.id === 5)
   
 
   return ( 

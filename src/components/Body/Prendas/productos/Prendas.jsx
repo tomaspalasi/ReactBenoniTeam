@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/prendas.css";
 import "../css/boton.css";
+import {Link} from 'react-router-dom'
 
 const Prenda = (item) => {
   setTimeout(() => {
@@ -19,13 +20,6 @@ const Prenda = (item) => {
     }
   }, 1150);
 
-  const verDetalle = () => {
-    console.log(item.nombre)
-    return(
-      item.nombre
-    )
-  }
-
   return (
     <div>
       <div className="remerasBox">
@@ -43,8 +37,10 @@ const Prenda = (item) => {
       </div>
       <h3 className="tituloRemera">{item.nombre}</h3>
       <div className="itemCount">
-        <input className="btnDetalle" type="button" value="Ver detalle del Producto" onClick={verDetalle}/>
-      </div>
+        <Link to={"/shop/prendadetalle"} className="linkDetalle">
+          <button className="btnDetalle">VER DETALLE</button>
+        </Link>
+      </div> 
     </div>
   );
 };

@@ -21,6 +21,7 @@ const PrendaListContainer = () => {
                 <div className='boxPrenda' key={prenda.id}>
                         <div className='remera'>
                             <Prenda
+                            id={prenda.id}
                             img1={prenda.img1}
                             img2={prenda.img2}
                             nombre={prenda.nombre}
