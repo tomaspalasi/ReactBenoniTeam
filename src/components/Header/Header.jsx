@@ -29,7 +29,7 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <Link className="nav-link" to={"/index"} aria-current="page">
+                            <Link className="nav-link" to={"/"} aria-current="page">
                                INICIO
                             </Link>
                             <Link className="nav-link" to={"/shop"}>
