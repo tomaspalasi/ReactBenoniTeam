@@ -1,36 +1,19 @@
-import React, {useState, useEffect} from "react";
 import PrendaDetail from "../productos/PrendaDetail";
 import {remeras} from '../../../../../mock/remeras'
 import Header from "../../../../Header/Header";
 import Footer from '../../../../Footer/Foter'
+import { useParams } from "react-router-dom";
 
 const PrendaDetailContainer = () => {
-
-    const [item, setItem] = useState({});
-
-    useEffect(() =>{
-        const getPrenda = () =>
-            new Promise((res, rej)=>{
-                const remera = remeras.find((rem) => rem.id === 1);
-                setTimeout(() =>{
-                    res (remera);
-                },500);
-            });
-
-            getPrenda()
-                .then((info) => {
-                    setItem(info);
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
-    },[]);
-
+    const {id} = useParams();
+    let idRemera = parseInt(id)
+    
+    const remera = remeras.find((rem) => rem.id === idRemera);
 
     return (
         <div>
             <Header/>
-            <PrendaDetail Items={item}/>
+                <PrendaDetail dtl={remera}/>
             <Footer/>
         </div>
     )

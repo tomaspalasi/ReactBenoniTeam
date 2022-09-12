@@ -31,13 +31,13 @@ const Prenda = (item) => {
             <div></div>
           </div>
         </div>
-        <figure id="productos">
+        <div id="productos">
           <img className="remerasBenoni" src={item.img2} alt="remeraImg" />
-        </figure>
+        </div>
       </div>
       <h3 className="tituloRemera">{item.nombre}</h3>
       <div className="itemCount">
-        <Link to={"/shop/prendadetalle"} className="linkDetalle">
+        <Link to={"/shop/prendadetalle/" + item.id} className="linkDetalle">
           <button className="btnDetalle">VER DETALLE</button>
         </Link>
       </div> 

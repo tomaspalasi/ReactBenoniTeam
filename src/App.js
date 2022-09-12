@@ -14,7 +14,8 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Index/>}/>
         <Route exact path='/shop' element={<Shop/>}/>
-        <Route exact path='/shop/prendadetalle' element={<PrendaDetailContainer/>}/>
+        <Route exact path='/shop/prendadetalle/:id' element={<PrendaDetailContainer/>}/>
+        <Route exact path='/shop/prendadetalle/:size' element={<PrendaDetailContainer/>}/>
         <Route exact path='/carrito' element={<Cart/>}/>
       </Routes>
     </BrowserRouter>

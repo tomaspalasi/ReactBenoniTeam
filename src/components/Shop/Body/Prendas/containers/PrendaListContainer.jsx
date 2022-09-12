@@ -27,6 +27,7 @@ const PrendaListContainer = () => {
                             nombre={prenda.nombre}
                             precio={prenda.precio}
                             stock={prenda.stock}
+                            tamanio={prenda.tamanio}
                             />
                         </div>
                 </div>
