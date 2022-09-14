@@ -1,14 +1,14 @@
 import "../css/prendas.css";
-import Prenda from "../productos/Prendas"
+import Item from "../productos/Item"
 
-const PrendaListContainer = ({size}) => {
+const ItemListContainer = ({size}) => {
   return (
         <div className='boxRemeras'>
             {size.map(prenda => {
                 return (
                     <div className='boxPrenda' key={prenda.id}>
                             <div className='remera'>
-                                <Prenda 
+                                <Item
                                     id={prenda.id}
                                     img1={prenda.img1}
                                     img2={prenda.img2}
@@ -25,4 +25,4 @@ const PrendaListContainer = ({size}) => {
   )
 }
 
-export default PrendaListContainer;
+export default ItemListContainer;

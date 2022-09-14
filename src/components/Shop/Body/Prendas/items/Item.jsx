@@ -3,7 +3,7 @@ import "../css/prendas.css";
 import "../css/boton.css";
 import {Link} from 'react-router-dom'
 
-const Prenda = (prendas) => {
+const Item = (prendas) => {
   setTimeout(() => {
     const loads = document.querySelectorAll("#loading");
 
@@ -46,4 +46,4 @@ const Prenda = (prendas) => {
   );
 };
 
-export default Prenda;
+export default Item;

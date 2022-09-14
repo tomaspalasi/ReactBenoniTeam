@@ -1,11 +1,11 @@
 import Header from "../../../../Header/Header";
 import Footer from '../../../../Footer/Foter'
-import PrendaListContainer from "./PrendaListContainer";
+import ItemListContainer from "./ItemListContainer";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { remeras } from "../../../../../mock/remeras";
 
-const PrendaCategoryContainer = () => {
+const ItemCategoryContainer = () => {
     const titulo = "BENONI TEAM - C.E.A.R.D.";
     const descripcion = "Bienvenidos a la tienda de BENONI. Acá vas a poder conseguir toda la merch del equipo de BENONI.";
 
@@ -43,7 +43,7 @@ const PrendaCategoryContainer = () => {
                     <h1 className="titulo">{titulo}</h1>
                     <p className="descripcion">{descripcion}</p>
                         <ul>
-                            <PrendaListContainer size={prendas}/>
+                            <ItemListContainer size={prendas}/>
                         </ul>
                     </div>
                 </div>
@@ -53,4 +53,4 @@ const PrendaCategoryContainer = () => {
 }
 
 
-export default PrendaCategoryContainer;
+export default ItemCategoryContainer;

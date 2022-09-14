@@ -1,10 +1,10 @@
-import PrendaDetail from "../productos/PrendaDetail";
+import ItemDetail from "../items/ItemDetail";
 import {remeras} from '../../../../../mock/remeras'
 import Header from "../../../../Header/Header";
 import Footer from '../../../../Footer/Foter'
 import { useParams } from "react-router-dom";
 
-const PrendaDetailContainer = () => {
+const ItemDetailContainer = () => {
     const {id} = useParams();
     let idRemera = parseInt(id)
     
@@ -13,10 +13,10 @@ const PrendaDetailContainer = () => {
     return (
         <div>
             <Header/>
-                <PrendaDetail dtl={remera}/>
+                <ItemDetail dtl={remera}/>
             <Footer/>
         </div>
     )
 }
 
-export default PrendaDetailContainer;
+export default ItemDetailContainer;

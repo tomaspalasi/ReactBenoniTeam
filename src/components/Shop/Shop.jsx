@@ -1,10 +1,10 @@
 import React from "react";
-import PrendaCategoryContainer from "./Body/Prendas/containers/PrendaCategoryContainer";
+import ItemCategoryContainer from "./Body/Prendas/containers/ItemCategoryContainer";
 
 const Shop = () => {
   return (
     <div>
-      <PrendaCategoryContainer/>
+      <ItemCategoryContainer/>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
-import ItemCount from "./PrendasCount";
+import ItemCount from "./ItemCount";
 import "../css/prendas.css";
 import "../css/boton.css";
 
-const PrendaDetail = (dtl) => {
+const ItemDetail = (dtl) => {
 
   return ( 
     <div className="itemCount" key={dtl.dtl.id}>
@@ -31,4 +31,4 @@ const PrendaDetail = (dtl) => {
   );
 };
 
-export default PrendaDetail;
+export default ItemDetail;
