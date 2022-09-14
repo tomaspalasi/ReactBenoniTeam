@@ -19,5 +19,4 @@ const PrendaDetailContainer = () => {
     )
 }
 
-
 export default PrendaDetailContainer;

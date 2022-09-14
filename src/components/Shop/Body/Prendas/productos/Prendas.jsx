@@ -3,7 +3,7 @@ import "../css/prendas.css";
 import "../css/boton.css";
 import {Link} from 'react-router-dom'
 
-const Prenda = (item) => {
+const Prenda = (prendas) => {
   setTimeout(() => {
     const loads = document.querySelectorAll("#loading");
 
@@ -32,12 +32,13 @@ const Prenda = (item) => {
           </div>
         </div>
         <div id="productos">
-          <img className="remerasBenoni" src={item.img2} alt="remeraImg" />
+          <img className="remerasBenoni" src={prendas.img2} alt="remeraImg" />
         </div>
       </div>
-      <h3 className="tituloRemera">{item.nombre}</h3>
+      <h3 className="tituloRemera">{prendas.nombre}</h3>
+      <p className="tituloRemera">{prendas.size}</p>
       <div className="itemCount">
-        <Link to={"/shop/prendadetalle/" + item.id} className="linkDetalle">
+        <Link to={"/shop/prendadetalle/" + prendas.id} className="linkDetalle">
           <button className="btnDetalle">VER DETALLE</button>
         </Link>
       </div> 

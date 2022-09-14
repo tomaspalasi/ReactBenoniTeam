@@ -32,10 +32,17 @@ const Header = () => {
                             <Link className="nav-link" to={"/"} aria-current="page">
                                INICIO
                             </Link>
-                            <Link className="nav-link" to={"/shop"}>
-                               SHOP
-                            </Link>
-                            <Link className="nav-link" to={"/carrito"}>
+                            <li className="nav-item dropdown">
+                                <Link className="nav-link dropdown-toggle" to={"/shop/"} role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                SHOP
+                                </Link>
+                                <ul className="dropdown-menu">
+                                    <li><Link className="dropdown-item" to={"/shop/"}>INICIO</Link></li>
+                                    <li><Link className="dropdown-item" to={"/shop/categoria/Niño"}>NIÑOS</Link></li>
+                                    <li><Link className="dropdown-item" to={"/shop/categoria/Adulto"}>ADULTOS</Link></li>
+                                </ul>
+                            </li>
+                            <Link className="nav-link" to={"/carrito/"}>
                                 <Carrito/>
                             </Link>
                         </div>

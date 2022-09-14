@@ -1,14 +1,10 @@
 import React from "react";
-import Header from "../Header/Header";
-import BodyShop from "../Shop/Body/BodyShop";
-import Footer from "../Footer/Foter";
+import PrendaCategoryContainer from "./Body/Prendas/containers/PrendaCategoryContainer";
 
 const Shop = () => {
   return (
     <div>
-        <Header />
-        <BodyShop />
-        <Footer />
+      <PrendaCategoryContainer/>
     </div>
   );
 };
