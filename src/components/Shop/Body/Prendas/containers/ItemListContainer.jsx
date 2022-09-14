@@ -1,5 +1,5 @@
 import "../css/prendas.css";
-import Item from "../productos/Item"
+import Item from "../items/Item"
 
 const ItemListContainer = ({size}) => {
   return (
