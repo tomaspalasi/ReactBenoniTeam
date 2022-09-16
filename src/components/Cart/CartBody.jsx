@@ -3,7 +3,7 @@ import Header from '../Header/Header'
 import BodyCart from './Body/BodyCart'
 import Footer from '../Footer/Foter'
 
-const Cart = () => {
+const CartBody = () => {
  
     return (
     <div>
@@ -14,4 +14,4 @@ const Cart = () => {
     )
 }
 
-export default Cart;
+export default CartBody;

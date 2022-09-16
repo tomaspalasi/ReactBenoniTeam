@@ -3,9 +3,9 @@ import 'core-js/actual';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Index from './components/Index/Index';
 import Shop from './components/Shop/Shop';
-import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './components/Shop/Body/Prendas/containers/ItemDetailContainer';
 import ItemCategoryContainer from './components/Shop/Body/Prendas/containers/ItemCategoryContainer';
+import CartBody from './components/Cart/CartBody';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Route exact path='/shop/' element={<Shop/>}/>
         <Route exact path='/shop/prendadetalle/:id' element={<ItemDetailContainer/>}/>
         <Route exact path='/shop/categoria/:size' element={<ItemCategoryContainer/>}/>
-        <Route exact path='/carrito/' element={<Cart/>}/>
+        <Route exact path='/carrito/' element={<CartBody/>}/>
       </Routes>
     </BrowserRouter>
   );

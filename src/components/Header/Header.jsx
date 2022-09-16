@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from '../../components/Header/img/benoni.png'
-import Carrito from "./Carrito";
+import CartWidget from "./CartWidget";
 import './css/header.css';
 import {Link} from "react-router-dom";
 
@@ -43,7 +43,7 @@ const Header = () => {
                                 </ul>
                             </li>
                             <Link className="nav-link" to={"/carrito/"}>
-                                <Carrito/>
+                                <CartWidget/>
                             </Link>
                         </div>
                     </div>
