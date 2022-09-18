@@ -10,7 +10,7 @@ const Item = (prendas) => {
     for (var i = 0; i < loads.length; i += 1) {
       loads[i].style.display = "none";
     }
-  }, 900);
+  }, 1500);
 
   setTimeout(() => {
     const prods = document.querySelectorAll("#productos");
@@ -18,7 +18,7 @@ const Item = (prendas) => {
     for (var i = 0; i < prods.length; i += 1) {
       prods[i].style.visibility = "visible";
     }
-  }, 1000);
+  }, 1500);
 
   return (
     <div>
