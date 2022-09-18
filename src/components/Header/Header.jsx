@@ -42,7 +42,7 @@ const Header = () => {
                                     <li><Link className="dropdown-item" to={"/shop/categoria/Adulto"}>ADULTOS</Link></li>
                                 </ul>
                             </li>
-                            <Link className="nav-link" to={"/carrito/"}>
+                            <Link className="nav-link" to={"/cart/"}>
                                 <CartWidget/>
                             </Link>
                         </div>

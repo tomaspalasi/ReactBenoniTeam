@@ -17,7 +17,7 @@ function App() {
         <Route exact path='/shop/' element={<Shop/>}/>
         <Route exact path='/shop/prendadetalle/:id' element={<ItemDetailContainer/>}/>
         <Route exact path='/shop/categoria/:size' element={<ItemCategoryContainer/>}/>
-        <Route exact path='/carrito/' element={<CartBody/>}/>
+        <Route exact path='/cart/' element={<CartBody/>}/>
       </Routes>
     </BrowserRouter>
   );

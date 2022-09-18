@@ -2,7 +2,7 @@ import React from "react";
 import ItemCount from "./ItemCount";
 import "../css/prendas.css";
 import "../css/boton.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { remeras } from '../../../../../mock/remeras'
 
 const ItemDetail = () => {
@@ -47,6 +47,9 @@ const ItemDetail = () => {
         <h4>${remera.precio}</h4>
         <h4>Tamaño: {remera.size}</h4>
         <ItemCount stock={remera.stock} initial={0} onAdd={0} />
+        <Link to={"/cart/"} className="linkFinCompra">
+          <button className="btnFinCompra">FINALIZAR COMPRA</button>
+        </Link>
       </div>
     </div>
   );
