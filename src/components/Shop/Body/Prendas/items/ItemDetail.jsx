@@ -50,6 +50,7 @@ const ItemDetail = () => {
             <img className="remerasBenoniDetail" src={remera.img2} alt="remeraImg" />
           </figure>
         </div>
+        <hr />
         <h3>{remera.nombre}</h3>
         <h4>${remera.precio}</h4>
         <h4>Tamaño: {remera.size}</h4>

@@ -24,10 +24,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
         if(cantidad <= itemStock) {
             onAdd(cantidad)
             setItemStock(itemStock - cantidad);
-            setCantidad(itemStock - cantidad)
+            setCantidad(itemStock + cantidad)
             Swal.fire ({
                 title: "¡Agregaste " + cantidad + " productos al carrito!",
-                position: "top-end",
+                position: "top",
                 toast: true,
                 showConfirmButton: false,
                 timer: 3000,

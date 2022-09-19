@@ -9,10 +9,21 @@
   }
   
   .logoCart {
-    width: 2em;
-    height: 2em;
+    width: 2.5em;
+    height: 2.5em;
     cursor: pointer;
     margin-top: -.5em;
+  }
+  .cartText{
+    font-size: 1.2em;
+  }
+
+  .logoTrash {
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+    margin-top: -.5em;
+    margin-right: 2em;
   }
 
   .nav-link {
@@ -26,4 +37,6 @@
   .carritoTrash {
     background: none;
     border: none;
+    text-decoration: none;
+    color: black;
   }
