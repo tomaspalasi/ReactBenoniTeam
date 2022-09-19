@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from '../../components/Header/img/benoni.png'
-import CartWidget from "./CartWidget";
+import CartWidget from "../Cart/CartWidget";
 import './css/header.css';
 import {Link} from "react-router-dom";
 

@@ -22,3 +22,8 @@
   .navbar-nav{
     margin-top: -1em;
   }
+
+  .carritoTrash {
+    background: none;
+    border: none;
+  }

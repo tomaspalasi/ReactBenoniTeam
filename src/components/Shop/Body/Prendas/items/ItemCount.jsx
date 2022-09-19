@@ -1,11 +1,12 @@
 import React,{ useState } from 'react'
+import { useEffect } from 'react';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import '../css/boton.css'
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [cantidad, setCantidad] = useState (initial);
     const [itemStock, setItemStock] = useState (stock);
-    const [itemAdd, setItemAdd] = useState (onAdd);
+
 
     const restarCantidad =(valor) => {
         if (valor > -1) {
@@ -21,8 +22,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     const agregarItems = () => {
         if(cantidad <= itemStock) {
+            onAdd(cantidad)
             setItemStock(itemStock - cantidad);
-            setItemAdd(itemAdd + cantidad)
+            setCantidad(itemStock - cantidad)
             Swal.fire ({
                 title: "¡Agregaste " + cantidad + " productos al carrito!",
                 position: "top-end",
@@ -33,9 +35,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 color: "black",
                 background: "#f9333b",
             })
-            console.log ("quedan" + (itemStock - cantidad))
+            console.log ("Quedan " + (itemStock - cantidad) + " remeras")
         }
     }
+
+    useEffect(()=>{
+        setItemStock(stock)
+    },[stock]);
 
     return (
         <div>
@@ -50,7 +56,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                     sumarCantidad(cantidad + 1)}}/>
             </div>
             <div className='itemCount'>
-                <input className='btnCompra' type="button" value="AGREGAR AL CARRITO" onClick={agregarItems}/>
+                <input className='btnCompra' type="button" value="AGREGAR AL CARRITO" onClick={()=>{agregarItems()}}/>
             </div>
         </div>
     )
