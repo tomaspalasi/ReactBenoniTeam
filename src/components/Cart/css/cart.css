@@ -1,0 +1,25 @@
+.searchID {
+    margin-top: 2em;
+    margin-left: 2em;
+}
+
+.idRemove {
+    margin-top: 2em;
+    margin-left: 2em;
+}
+
+#lookForID {
+    margin-top: .5em;
+    font-family: "ReadexPro-Medium";
+    font-size: 1.5em;
+}
+
+#removeID {
+    margin-top: .5em;
+    font-family: "ReadexPro-Medium";
+    font-size: 1.5em;
+}
+
+.carritoTrash{
+    margin-left: 1em;
+}

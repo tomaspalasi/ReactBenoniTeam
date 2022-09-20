@@ -27,12 +27,16 @@ const CarritoApp = ({children}) => {
         setCarrito([])
     }
 
+    const removeItem = (id) => {
+        return carrito.find(remera => remera.id===id)
+        }
+
     const cartTotal = () => {
         return carrito.reduce ((total, item) => total+=item.cantidad, 0)
     }
 
     return(
-        <CartContext.Provider value={{addItem, isInCart, clear, cartTotal}}>{children}</CartContext.Provider>
+        <CartContext.Provider value={{addItem, isInCart, clear, cartTotal,removeItem, carrito, setCarrito}}>{children}</CartContext.Provider>
     )
 }
 

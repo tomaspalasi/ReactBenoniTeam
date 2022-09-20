@@ -8,7 +8,7 @@ const CartBody = () => {
     return (
     <div>
         <Header/>
-        <BodyCart/>
+            <BodyCart/>
         <Footer/>
     </div>
     )
