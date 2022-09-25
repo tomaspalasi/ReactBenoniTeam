@@ -4,6 +4,7 @@ import Remove from '../img/remove.svg'
 import { CartContext } from "../CartContext";
 import { useRef } from "react";
 import '../css/cart.css'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 const BodyCart = () => {
     const {setCarrito, carrito} = useContext(CartContext)
@@ -14,23 +15,152 @@ const BodyCart = () => {
         const idBuscado = inputId.current.value
         if (idBuscado === "1"){
             let check = carrito.some(remera => remera.id===1)
-            console.log ("El resultado para el id buscado es: " + check)
+            if (check){
+                let prenda = carrito.find(r => r.id === 1)
+                Swal.fire ({
+                    title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#2c8b5f",
+                })
+                console.log ("El resultado para el id buscado es: " + check)
+            }else {
+                Swal.fire ({
+                    title: "¡No se encuentra la remera buscada en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#f9333b",
+                })
+            }
         } else if (idBuscado === "2"){
             let check = carrito.some(remera => remera.id===2)
-            console.log ("El resultado para el id buscado es: " + check)
+            if (check){
+                let prenda = carrito.find(r => r.id === 2)
+                Swal.fire ({
+                    title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#2c8b5f",
+                })
+                console.log ("El resultado para el id buscado es: " + check)
+            }else {
+                Swal.fire ({
+                    title: "¡No se encuentra la remera buscada en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#f9333b",
+                })
+            }
         }else if (idBuscado === "3"){
             let check = carrito.some(remera => remera.id===3)
-            console.log ("El resultado para el id buscado es: " + check)
+            if (check){
+                let prenda = carrito.find(r => r.id === 3)
+                Swal.fire ({
+                    title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#2c8b5f",
+                })
+                console.log ("El resultado para el id buscado es: " + check)
+            }else {
+                Swal.fire ({
+                    title: "¡No se encuentra la remera buscada en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#f9333b",
+                })
+            }
         }
         else if (idBuscado === "4"){
             let check = carrito.some(remera => remera.id===4)
-            console.log ("El resultado para el id buscado es: " + check)
+            if (check){
+                let prenda = carrito.find(r => r.id === 4)
+                Swal.fire ({
+                    title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#2c8b5f",
+                })
+                console.log ("El resultado para el id buscado es: " + check)
+            }else {
+                Swal.fire ({
+                    title: "¡No se encuentra la remera buscada en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#f9333b",
+                })
+            }
         }else if (idBuscado === "5"){
             let check = carrito.some(remera => remera.id===5)
-            console.log ("El resultado para el id buscado es: " + check)
+            if (check){
+                let prenda = carrito.find(r => r.id === 5)
+                Swal.fire ({
+                    title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#2c8b5f",
+                })
+                console.log ("El resultado para el id buscado es: " + check)
+            }else {
+                Swal.fire ({
+                    title: "¡No se encuentra la remera buscada en tu carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#f9333b",
+                })
+            }
         }
         else (
-            console.log ("No se encuentra el ID buscado")
+            Swal.fire ({
+                title: "¡El ID buscado, no corresponde a un producto!",
+                position: "top",
+                toast: true,
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                color: "black",
+                background: "#f9333b",
+            })
         )
     }
 
@@ -42,6 +172,16 @@ const BodyCart = () => {
             const remove = carrito.find(r => r.id === 1)
             if (remove){
                 const removed = carrito.filter(f => f.id !== 1)
+                Swal.fire ({
+                    title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "grey",
+                })
                 console.log ("Se borró del carrito la remera: " + remove.nombre)
                 setCarrito(removed)
             } else {
@@ -51,6 +191,16 @@ const BodyCart = () => {
             const remove = carrito.find(r => r.id === 2)
             if (remove){
                 const removed = carrito.filter(f => f.id !== 2)
+                Swal.fire ({
+                    title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "grey",
+                })
                 console.log ("Se borró del carrito la remera: " + remove.nombre)
                 setCarrito(removed)
             } else {
@@ -60,6 +210,16 @@ const BodyCart = () => {
             const remove = carrito.find(r => r.id === 3)
             if (remove){
                 const removed = carrito.filter(f => f.id !== 3)
+                Swal.fire ({
+                    title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "grey",
+                })
                 console.log ("Se borró del carrito la remera: " + remove.nombre)
                 setCarrito(removed)
             } else {
@@ -69,6 +229,16 @@ const BodyCart = () => {
             const remove = carrito.find(r => r.id === 4)
             if (remove){
                 const removed = carrito.filter(f => f.id !== 4)
+                Swal.fire ({
+                    title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "grey",
+                })
                 console.log ("Se borró del carrito la remera: " + remove.nombre)
                 setCarrito(removed)
             } else {
@@ -78,6 +248,16 @@ const BodyCart = () => {
             const remove = carrito.find(r => r.id === 5)
             if (remove){
                 const removed = carrito.filter(f => f.id !== 5)
+                Swal.fire ({
+                    title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "grey",
+                })
                 console.log ("Se borró del carrito la remera: " + remove.nombre)
                 setCarrito(removed)
             } else {
