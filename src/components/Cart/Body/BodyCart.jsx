@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import Search from '../img/search.svg'
 import Remove from '../img/remove.svg'
 import { CartContext } from "../CartContext";
 import { useRef } from "react";
 import '../css/cart.css'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
+import CartItems from "./CartItems"
 
 const BodyCart = () => {
     const {setCarrito, carrito} = useContext(CartContext)
@@ -271,6 +272,33 @@ const BodyCart = () => {
 
     console.log(carrito)
 
+    const precioTotal = () =>{
+        return carrito.reduce((acumulador,elem) => acumulador + elem.precio * elem.cantidad, 0);
+    }
+
+    const checkOut = () => {
+        if (carrito.length <= 0) {
+            Swal.fire({
+                title: '¡Tu carrito se encuentra vacío!',
+                text: 'Date una vuelta por nuestro Shop y adquirí nuevos productos',
+                icon: 'info',
+                color: "whitesmoke",
+                background: "rgb(32, 32, 32)",
+                confirmButtonColor: "#e0383f",
+                }) 
+        } else {
+            Swal.fire({
+                title: '¡Muchas gracias por adquirir nuestra merch!',
+                text: 'Pronto te estará llegando un mail con los datos de envio.',
+                icon: 'success',
+                color: "whitesmoke",
+                background: "rgb(32, 32, 32)",
+                confirmButtonColor: "#e0383f",
+                })
+            setCarrito([])
+        }
+    }
+
     return (
     <div>
         <div className="searchID">
@@ -286,6 +314,35 @@ const BodyCart = () => {
                 <button className='carritoTrash' type='button'tittle='RemoveCarrito' onClick={removeItemId}>
                     <img className='logoTrash' src={Remove} alt="removeCan" />
                 </button>
+        </div>
+        <div>
+            <h2 className="tituloItemsCarrito">Actualmente tu carrito cuenta con los siguientes productos:</h2>
+            <div className='boxRemeras'>
+                {carrito.map(prenda => {
+                    return (
+                        <div className='boxPrenda' key={prenda.id}>
+                                <div className='remera'>
+                                    <CartItems
+                                        id={prenda.id}
+                                        img1={prenda.img1}
+                                        img2={prenda.img2}
+                                        nombre={prenda.nombre}
+                                        precio={prenda.precio}
+                                        stock={prenda.stock}
+                                        size={prenda.size}
+                                        cantidad={prenda.cantidad}
+                                    />
+                                </div>
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+        <div>
+            <h2 className="tituloTotalCarrito">Total de tu carrito: ${precioTotal()}</h2>
+        </div>
+        <div className="btnCheckOut">
+            <button className="btnFinCompra" onClick={checkOut}>CHECK OUT</button>
         </div>
     </div>
     )

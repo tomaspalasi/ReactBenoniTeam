@@ -4,7 +4,10 @@ import './css/footer.css'
 
 const Footer = () => {
     return(
-        <div className="contenedorLogo"><img className="logoTJP" src={LogoTJP} alt="logoTJP"/></div>
+        <div>
+            <hr />
+            <div className="contenedorLogo"><img className="logoTJP" src={LogoTJP} alt="logoTJP"/></div>
+        </div>
     )
 }
 

@@ -25,7 +25,7 @@
 .boxPrenda {
     display: flex;
     justify-content: center;
-    border: solid .2em grey;
+    border: none;
     border-radius: 1em;
     filter: drop-shadow(5px 5px 5px #dadada);
     background-color: rgb(206 193 192);

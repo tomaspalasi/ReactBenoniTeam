@@ -23,3 +23,37 @@
 .carritoTrash{
     margin-left: 1em;
 }
+
+.tituloItemsCarrito{
+    text-align: center;
+}
+
+.btnEliminar {
+    display: flex;
+    justify-content: center;
+}
+
+.tituloTotalCarrito{
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+.btnCheckOut{
+    display: flex;
+    justify-content: center;
+}
+
+.carritoVacio {
+    width: 25em;
+}
+
+.carritoEmpty{
+    margin-top: 4em;
+    margin-bottom: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+.carritoEmptyText{
+    text-align: center;
+}
