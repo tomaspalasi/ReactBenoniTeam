@@ -31,8 +31,10 @@ const Item = (prendas) => {
             <div></div>
           </div>
         </div>
-        <div id="productos">
-          <img className="remerasBenoni" src={prendas.img2} alt="remeraImg" />
+        <div id="productos" className="hoverDetail">
+          <figure>
+            <img className="remerasBenoni" src={prendas.img2} alt="remeraImg" />
+          </figure>
         </div>
       </div>
       <h3 className="tituloRemera">{prendas.nombre}</h3>

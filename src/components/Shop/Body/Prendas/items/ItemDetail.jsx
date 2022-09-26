@@ -45,10 +45,14 @@ const ItemDetail = () => {
               <div></div>
             </div>
           </div>
+          <div className="hoverDetail">
           <figure id="productos">
             <img className="remerasBenoniDetail" src={remera.img1} alt="remeraImg" />
+          </figure>
+          <figure>
             <img className="remerasBenoniDetail" src={remera.img2} alt="remeraImg" />
           </figure>
+          </div>
         </div>
         <hr />
         <h3>{remera.nombre}</h3>

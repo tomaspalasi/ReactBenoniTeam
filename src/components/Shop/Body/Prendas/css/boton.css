@@ -7,7 +7,7 @@
 }
 
 .prendaDetail {
-    border: solid .2em grey;
+    border: none;
     border-radius: 1em;
     background-color: rgb(206 193 192);
     padding: 1em;
