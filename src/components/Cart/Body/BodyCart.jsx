@@ -13,11 +13,11 @@ const BodyCart = () => {
     const inputId = useRef(null);
 
     function isInCartId () {
-        const idBuscado = inputId.current.value
-        if (idBuscado === "1"){
-            let check = carrito.some(remera => remera.id===1)
+        const idBuscado = inputId.current.value.toUpperCase()
+        if (idBuscado === "DAVAI"){
+            let check = carrito.some(remera => remera.nombre==="DAVAI")
             if (check){
-                let prenda = carrito.find(r => r.id === 1)
+                let prenda = carrito.find(r => r.nombre ==="DAVAI")
                 Swal.fire ({
                     title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
                     position: "top",
@@ -41,10 +41,10 @@ const BodyCart = () => {
                     background: "#f9333b",
                 })
             }
-        } else if (idBuscado === "2"){
-            let check = carrito.some(remera => remera.id===2)
+        } else if (idBuscado === "DAVAI!!"){
+            let check = carrito.some(remera => remera.nombre==="DAVAI!!")
             if (check){
-                let prenda = carrito.find(r => r.id === 2)
+                let prenda = carrito.find(r => r.nombre === "DAVAI!!")
                 Swal.fire ({
                     title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
                     position: "top",
@@ -68,10 +68,10 @@ const BodyCart = () => {
                     background: "#f9333b",
                 })
             }
-        }else if (idBuscado === "3"){
-            let check = carrito.some(remera => remera.id===3)
+        }else if (idBuscado === "BENONI"){
+            let check = carrito.some(remera => remera.nombre==="BENONI")
             if (check){
-                let prenda = carrito.find(r => r.id === 3)
+                let prenda = carrito.find(r => r.nombre === "BENONI")
                 Swal.fire ({
                     title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
                     position: "top",
@@ -96,10 +96,10 @@ const BodyCart = () => {
                 })
             }
         }
-        else if (idBuscado === "4"){
-            let check = carrito.some(remera => remera.id===4)
+        else if (idBuscado === "BIELAS"){
+            let check = carrito.some(remera => remera.nombre==="BIELAS")
             if (check){
-                let prenda = carrito.find(r => r.id === 4)
+                let prenda = carrito.find(r => r.nombre === "BIELAS")
                 Swal.fire ({
                     title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
                     position: "top",
@@ -123,10 +123,10 @@ const BodyCart = () => {
                     background: "#f9333b",
                 })
             }
-        }else if (idBuscado === "5"){
-            let check = carrito.some(remera => remera.id===5)
+        }else if (idBuscado === "MERENGUITOS"){
+            let check = carrito.some(remera => remera.nombre==="MERENGUITOS")
             if (check){
-                let prenda = carrito.find(r => r.id === 5)
+                let prenda = carrito.find(r => r.nombre === "MERENGUITOS")
                 Swal.fire ({
                     title: "¡Se encuentra la remera "+ prenda.nombre+ " en tu carrito!",
                     position: "top",
@@ -153,7 +153,7 @@ const BodyCart = () => {
         }
         else (
             Swal.fire ({
-                title: "¡El ID buscado, no corresponde a un producto!",
+                title: "¡El nombre ingresado, no corresponde a un producto!",
                 position: "top",
                 toast: true,
                 showConfirmButton: false,
@@ -168,11 +168,11 @@ const BodyCart = () => {
     const removeId = useRef(null);
 
     function removeItemId(){
-        const idRemove = removeId.current.value
-        if (idRemove === "1"){
-            const remove = carrito.find(r => r.id === 1)
+        const idRemove = removeId.current.value.toUpperCase()
+        if (idRemove === "DAVAI"){
+            const remove = carrito.find(r => r.nombre === "DAVAI")
             if (remove){
-                const removed = carrito.filter(f => f.id !== 1)
+                const removed = carrito.filter(f => f.nombre !== "DAVAI")
                 Swal.fire ({
                     title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
                     position: "top",
@@ -188,10 +188,10 @@ const BodyCart = () => {
             } else {
                 console.log("No se encuentra la remera en el carrito")
             }
-        } else if (idRemove === "2"){
-            const remove = carrito.find(r => r.id === 2)
+        } else if (idRemove === "DAVAI!!"){
+            const remove = carrito.find(r => r.nombre ==="DAVAI!!")
             if (remove){
-                const removed = carrito.filter(f => f.id !== 2)
+                const removed = carrito.filter(f => f.nombre !=="DAVAI!!")
                 Swal.fire ({
                     title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
                     position: "top",
@@ -207,10 +207,10 @@ const BodyCart = () => {
             } else {
                 console.log("No se encuentra la remera en el carrito")
             }
-        }else if (idRemove === "3"){
-            const remove = carrito.find(r => r.id === 3)
+        }else if (idRemove === "BENONI"){
+            const remove = carrito.find(r => r.nombre === "BENONI")
             if (remove){
-                const removed = carrito.filter(f => f.id !== 3)
+                const removed = carrito.filter(f => f.nombre !== "BENONI")
                 Swal.fire ({
                     title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
                     position: "top",
@@ -226,10 +226,10 @@ const BodyCart = () => {
             } else {
                 console.log("No se encuentra la remera en el carrito")
             }
-        }else if (idRemove === "4"){
-            const remove = carrito.find(r => r.id === 4)
+        }else if (idRemove === "BIELAS"){
+            const remove = carrito.find(r => r.nombre === "BIELAS")
             if (remove){
-                const removed = carrito.filter(f => f.id !== 4)
+                const removed = carrito.filter(f => f.nombre !== "BIELAS")
                 Swal.fire ({
                     title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
                     position: "top",
@@ -245,10 +245,10 @@ const BodyCart = () => {
             } else {
                 console.log("No se encuentra la remera en el carrito")
             }
-        }else if (idRemove === "5"){
-            const remove = carrito.find(r => r.id === 5)
+        }else if (idRemove === "MERENGUITOS"){
+            const remove = carrito.find(r => r.nombre === "MERENGUITOS")
             if (remove){
-                const removed = carrito.filter(f => f.id !== 5)
+                const removed = carrito.filter(f => f.nombre !== "MERENGUITOS")
                 Swal.fire ({
                     title: "¡Se borró del carrito la remera "+ remove.nombre +"!",
                     position: "top",
@@ -266,7 +266,7 @@ const BodyCart = () => {
             }
         }
         else (
-            console.log ("No se encuentra el ID buscado")
+            console.log ("No se encuentra el producto buscado")
         )
     }
 
@@ -302,7 +302,7 @@ const BodyCart = () => {
     return (
     <div>
         <div className="searchID">
-            <h2>¿Querés saber si un ID se encuentra en tu carrito?</h2>
+            <h2>¿Querés saber si una remera se encuentra en tu carrito?</h2>
                 <input ref={inputId} type="text" placeholder="ID del producto a buscar" id="lookForID"/>
                 <button className="carritoTrash" onClick={isInCartId}>
                     <img className='logoTrash' src={Search} alt="searchCan"/>

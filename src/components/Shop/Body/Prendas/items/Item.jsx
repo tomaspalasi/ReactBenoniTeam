@@ -10,7 +10,7 @@ const Item = (prendas) => {
     for (var i = 0; i < loads.length; i += 1) {
       loads[i].style.display = "none";
     }
-  }, 2000);
+  }, 100);
 
   setTimeout(() => {
     const prods = document.querySelectorAll("#productos");
@@ -18,7 +18,7 @@ const Item = (prendas) => {
     for (var i = 0; i < prods.length; i += 1) {
       prods[i].style.visibility = "visible";
     }
-  }, 2000);
+  }, 100);
 
   return (
     <div>
@@ -38,7 +38,7 @@ const Item = (prendas) => {
         </div>
       </div>
       <h3 className="tituloRemera">{prendas.nombre}</h3>
-      <p className="tituloRemera">{prendas.size}</p>
+      <p className="tituloRemera">{prendas.tamaño}</p>
       <div className="itemCount">
         <Link to={"/shop/prendadetalle/" + prendas.id} className="linkDetalle">
           <button className="btnDetalle">VER DETALLE</button>

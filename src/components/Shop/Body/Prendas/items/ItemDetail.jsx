@@ -2,14 +2,13 @@ import React, { useContext } from "react";
 import ItemCount from "./ItemCount";
 import "../css/prendas.css";
 import "../css/boton.css";
-import { Link, useParams } from "react-router-dom";
-import { remeras } from '../../../../../mock/remeras'
+import { Link } from "react-router-dom";
 import { CartContext } from "../../../../Cart/CartContext";
 
-const ItemDetail = () => {
-  const {id} = useParams();
-  let idRemera = parseInt(id)
-  const remera = remeras.find((rem) => rem.id === idRemera)
+
+const ItemDetail = ({remera}) => {
+
+  // const remera = productos.find((rem) => rem.id === id)
 
   setTimeout(() => {
     const loads = document.querySelectorAll("#loading");
@@ -57,7 +56,7 @@ const ItemDetail = () => {
         <hr />
         <h3>{remera.nombre}</h3>
         <h4>${remera.precio}</h4>
-        <h4>Tamaño: {remera.size}</h4>
+        <h4>Tamaño: {remera.tamaño}</h4>
         <ItemCount stock={remera.stock} initial={0} onAdd={onAdd} />
         <Link to={"/cart/"} className="linkFinCompra">
           <button className="btnFinCompra">FINALIZAR COMPRA</button>
