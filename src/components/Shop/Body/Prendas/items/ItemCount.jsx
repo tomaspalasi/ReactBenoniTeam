@@ -21,10 +21,22 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const agregarItems = () => {
-        if(cantidad <= itemStock) {
+        if(cantidad === 0) {
+            Swal.fire ({
+                title: "¡Debes agregar productos al carrito!",
+                position: "top",
+                toast: true,
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                color: "black",
+                background: "grey",
+            })
+            console.log ("Quedan " + (itemStock - cantidad) + " remeras")
+        } else if (cantidad <= itemStock) {
             onAdd(cantidad)
             setItemStock(itemStock - cantidad);
-            setCantidad(itemStock - cantidad)
+            setCantidad(0)
             Swal.fire ({
                 title: "¡Agregaste " + cantidad + " productos al carrito!",
                 position: "top",

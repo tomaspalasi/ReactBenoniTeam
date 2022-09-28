@@ -16,7 +16,7 @@ const ItemDetail = ({remera}) => {
     for (var i = 0; i < loads.length; i += 1) {
       loads[i].style.display = "none";
     }
-  }, 2000);
+  }, 500);
 
   setTimeout(() => {
     const prods = document.querySelectorAll("#productos");
@@ -24,7 +24,7 @@ const ItemDetail = ({remera}) => {
     for (var i = 0; i < prods.length; i += 1) {
       prods[i].style.visibility = "visible";
     }
-  }, 2000);
+  }, 500);
 
   const {addItem} = useContext(CartContext);
 

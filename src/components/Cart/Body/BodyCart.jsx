@@ -301,20 +301,6 @@ const BodyCart = () => {
 
     return (
     <div>
-        <div className="searchID">
-            <h2>¿Querés saber si una remera se encuentra en tu carrito?</h2>
-                <input ref={inputId} type="text" placeholder="ID del producto a buscar" id="lookForID"/>
-                <button className="carritoTrash" onClick={isInCartId}>
-                    <img className='logoTrash' src={Search} alt="searchCan"/>
-                </button>
-        </div>
-        <div className="idRemove">
-            <h2>¿Querés eliminar un item de tu carrito?</h2>
-                <input ref={removeId} type="text" placeholder="ID del producto a borrar" id="removeID"/>
-                <button className='carritoTrash' type='button'tittle='RemoveCarrito' onClick={removeItemId}>
-                    <img className='logoTrash' src={Remove} alt="removeCan" />
-                </button>
-        </div>
         <div>
             <h2 className="tituloItemsCarrito">Actualmente tu carrito cuenta con los siguientes productos:</h2>
             <div className='boxRemeras'>
@@ -341,6 +327,24 @@ const BodyCart = () => {
         <div>
             <h2 className="tituloTotalCarrito">Total de tu carrito: ${precioTotal()}</h2>
         </div>
+        <hr />
+        <div id="searchRemove">
+            <div className="searchID">
+                <h2>¿Querés saber si una remera se encuentra en tu carrito?</h2>
+                    <input ref={inputId} type="text" placeholder="Nombre del producto a buscar" id="lookForID"/>
+                    <button className="carritoTrash" onClick={isInCartId}>
+                        <img className='logoTrash' src={Search} alt="searchCan"/>
+                    </button>
+            </div>
+            <div className="idRemove">
+                <h2>¿Querés eliminar un item de tu carrito?</h2>
+                    <input ref={removeId} type="text" placeholder="Nombre del producto a borrar" id="removeID"/>
+                    <button className='carritoTrash' type='button'tittle='RemoveCarrito' onClick={removeItemId}>
+                        <img className='logoTrash' src={Remove} alt="removeCan" />
+                    </button>
+            </div>
+        </div>
+        <hr />
         <div className="btnCheckOut">
             <button className="btnFinCompra" onClick={checkOut}>CHECK OUT</button>
         </div>

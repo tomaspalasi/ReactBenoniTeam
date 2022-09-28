@@ -12,12 +12,14 @@
     margin-top: .5em;
     font-family: "ReadexPro-Medium";
     font-size: 1.5em;
+    width: 50%;
 }
 
 #removeID {
     margin-top: .5em;
     font-family: "ReadexPro-Medium";
     font-size: 1.5em;
+    width: 70%;
 }
 
 .carritoTrash{
@@ -26,6 +28,7 @@
 
 .tituloItemsCarrito{
     text-align: center;
+    margin-top: 1em;
 }
 
 .btnEliminar {
@@ -43,6 +46,12 @@
     justify-content: center;
 }
 
+.btnCheckOut :hover{
+    transition: all .3s;
+    transform: scale(1.05);
+    background-color: green;
+}
+
 .carritoVacio {
     width: 25em;
 }
@@ -56,4 +65,9 @@
 
 .carritoEmptyText{
     text-align: center;
+}
+
+#searchRemove {
+    display: flex;
+    justify-content: space-evenly;
 }
