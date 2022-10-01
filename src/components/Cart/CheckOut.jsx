@@ -13,12 +13,13 @@ import Cart from '../Cart/img/carritoVacio.png'
 
 
 const CheckOut = () => {
+    
     const {carrito, clear} = useContext(CartContext)
 
     const [nombre, setNombre] = useState("")
     const [email, setEmail] = useState("")
     const [telefono, setTelefono] = useState("")
-    const [pedido, setPedido] = useState("")
+    const [pedidoId, setPedidoId] = useState("")
  
     const enviarPedido = () => {
         const buyer = {name: nombre, email: email, phone: telefono};
@@ -32,10 +33,10 @@ const CheckOut = () => {
         const orden = {buyer: buyer, items: productos, date: now,total: precioTotal()*1.21}
 
         const db = getFirestore()
-        const ordenCollection = collection (db, "ordenes");
+        const ordenCollection = collection (db, "pedidos");
 
-        addDoc(ordenCollection, orden).then((datos) => {
-            setPedido(datos.id);
+        addDoc(ordenCollection, orden).then(({id}) => {
+            setPedidoId(id);
             clear();
         });
 
@@ -65,7 +66,7 @@ const CheckOut = () => {
     }
 
     return (
-    <div>
+        <div>
         <Header/>
             {carrito.length > 0 ?
             <form id="formCheckout">
@@ -82,7 +83,7 @@ const CheckOut = () => {
                         <label for="email" className="form-label">Email</label>
                         <input type="text" className="form-control" id="emailInput"  onInput={(e) => setEmail (e.target.value)}/>
                     </div>
-                        <Link id="enviarPedido" className="btn btn-primary" onClick={enviarPedido} to="/">Enviar Pedido</Link>
+                        <Link id="enviarPedido" className="btn btn-primary" onClick={enviarPedido} to="/success/">Enviar Pedido</Link>
                 </div>
                 <div id="carritoCheckOut">
                     {carrito.map(prenda => {
@@ -108,7 +109,8 @@ const CheckOut = () => {
                     <p className="ivaCheckOut">*IVA incluído</p>
                 </div>
                 </div>
-            </form>: pedido !== "" ? <Success id={pedido}/> : 
+            </form>
+            :
                 <div>
                     <div className="carritoEmptyText">
                         <h1>¡Tu carrito se encuentra vacio!</h1>
