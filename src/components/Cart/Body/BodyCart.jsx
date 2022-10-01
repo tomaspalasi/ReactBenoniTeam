@@ -6,6 +6,7 @@ import { useRef } from "react";
 import '../css/cart.css'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import CartItems from "./CartItems"
+import { Link } from "react-router-dom";
 
 const BodyCart = () => {
     const {setCarrito, carrito} = useContext(CartContext)
@@ -276,29 +277,6 @@ const BodyCart = () => {
         return carrito.reduce((acumulador,elem) => acumulador + elem.precio * elem.cantidad, 0);
     }
 
-    const checkOut = () => {
-        if (carrito.length <= 0) {
-            Swal.fire({
-                title: '¡Tu carrito se encuentra vacío!',
-                text: 'Date una vuelta por nuestro Shop y adquirí nuevos productos',
-                icon: 'info',
-                color: "whitesmoke",
-                background: "rgb(32, 32, 32)",
-                confirmButtonColor: "#e0383f",
-                }) 
-        } else {
-            Swal.fire({
-                title: '¡Muchas gracias por adquirir nuestra merch!',
-                text: 'Pronto te estará llegando un mail con los datos de envio.',
-                icon: 'success',
-                color: "whitesmoke",
-                background: "rgb(32, 32, 32)",
-                confirmButtonColor: "#e0383f",
-                })
-            setCarrito([])
-        }
-    }
-
     return (
     <div>
         <div>
@@ -326,6 +304,7 @@ const BodyCart = () => {
         </div>
         <div>
             <h2 className="tituloTotalCarrito">Total de tu carrito: ${precioTotal()}</h2>
+            <p className="ivaCart">*IVA no incluído</p>
         </div>
         <hr />
         <div id="searchRemove">
@@ -346,7 +325,7 @@ const BodyCart = () => {
         </div>
         <hr />
         <div className="btnCheckOut">
-            <button className="btnFinCompra" onClick={checkOut}>CHECK OUT</button>
+            <Link to={"/checkout/"} className="btnFinCompra" id="checkOutContinue">CHECK OUT</Link>
         </div>
     </div>
     )

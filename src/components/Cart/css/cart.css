@@ -50,6 +50,14 @@
     transition: all .3s;
     transform: scale(1.05);
     background-color: green;
+    color: white;
+}
+
+#checkOutContinue{
+    font-family: "ReadexPro-Medium";
+    size: 1.2em;
+    text-align: center;
+    text-decoration: none;
 }
 
 .carritoVacio {
@@ -70,4 +78,87 @@
 #searchRemove {
     display: flex;
     justify-content: space-evenly;
+}
+
+#formCheckout{
+    font-family: "ReadexPro-Medium";
+    margin-left: 2em;
+    margin-top: 2em;
+    font-size: 1.5em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#carritoCheckOut {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin-right: 2em;
+    margin-left: 2em;
+}
+
+#enviarPedido{
+    background-color: #e0383f;
+    font-size: 1.2em;
+    border: none;
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.btnEliminarPrenda{
+    display: flex;
+    justify-content: center;
+}
+
+.btnEliminarPrenda button{
+    border: none;
+    background-color: transparent;
+}
+
+.logoTrashCheckOut{
+    width: 1em;
+    margin-top: -0.8em;
+}
+
+#productosCheckOut{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.remerasBenoniCheckOut{
+    width: 4em;
+}
+
+.remerasBoxCheckOut{
+    display: flex;
+    flex-direction: row;
+}
+
+#boxCheckOut{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contenidoBox {
+    margin-left: .5em;
+    margin-right: .1em;
+
+}
+
+.tituloRemeraCheckOut{
+    font-size: 1em;
+}
+
+#checkOutTotal{
+    display: flex;
+    justify-content: right;
+}
+
+.ivaCart {
+    margin-left: 2em;
+}
+
+.ivaCheckOut {
+    font-size: .7em;
+    margin-left: 1.5em;
 }
