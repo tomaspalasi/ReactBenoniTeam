@@ -8,8 +8,6 @@ import { CartContext } from "../../../../Cart/CartContext";
 
 const ItemDetail = ({remera}) => {
 
-  // const remera = productos.find((rem) => rem.id === id)
-
   setTimeout(() => {
     const loads = document.querySelectorAll("#loading");
 
@@ -27,12 +25,12 @@ const ItemDetail = ({remera}) => {
   }, 100);
 
   const {addItem} = useContext(CartContext);
-
+  
   const onAdd = (cantidad) => {
     addItem(remera, cantidad);
-}
+  }
 
-  return ( 
+  return (
     <div className="itemCount" key={remera.id}>
       <div className="prendaDetail">
         <div className="remerasBox">
@@ -57,7 +55,7 @@ const ItemDetail = ({remera}) => {
         <h3>{remera.nombre}</h3>
         <h4>${remera.precio}</h4>
         <h4>Tamaño: {remera.tamaño}</h4>
-        <ItemCount stock={remera.stock} initial={0} onAdd={onAdd} />
+        <ItemCount remera={remera} stock={remera.stock} initial={0} onAdd={onAdd} />
         <Link to={"/cart/"} className="linkFinCompra">
           <button className="btnFinCompra">FINALIZAR COMPRA</button>
         </Link>

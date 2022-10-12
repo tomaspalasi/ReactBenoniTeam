@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import '../css/boton.css'
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd, remera}) => {
     const [cantidad, setCantidad] = useState (initial);
     const [itemStock, setItemStock] = useState (stock);
+    const [talle, setTalle] = useState ('');
 
 
     const restarCantidad =(valor) => {
@@ -38,7 +39,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setItemStock(itemStock - cantidad);
             setCantidad(0)
             Swal.fire ({
-                title: "¡Agregaste " + cantidad + " productos al carrito!",
+                title: "¡Agregaste " + cantidad + " productos, talle " + talle + ", al carrito!",
                 position: "top",
                 toast: true,
                 showConfirmButton: false,
@@ -55,8 +56,18 @@ const ItemCount = ({stock, initial, onAdd}) => {
         setItemStock(stock)
     },[stock]);
 
+    const talleSelect = (e) => {
+        setTalle(e.target.value)
+    }
+
     return (
         <div>
+            <div>
+                <h4>Talles disponibles:</h4>
+                    <button onClick={talleSelect} type="button" id='botonTalle' className="btn btn-primary" value={remera.talle1}>{remera.talle1}</button>
+                    <button onClick={talleSelect} type="button" id='botonTalle' className="btn btn-primary" value={remera.talle2}>{remera.talle2}</button>
+                    <button onClick={talleSelect} type="button" id='botonTalle' className="btn btn-primary botontalle" value={remera.talle3}>{remera.talle3}</button>
+            </div>
             <div>
                 <h4>Stock disponible: {itemStock}</h4>
             </div>

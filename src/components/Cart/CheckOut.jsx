@@ -7,7 +7,6 @@ import './css/cart.css'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import { addDoc, collection, getFirestore} from "firebase/firestore";
 import { Link } from "react-router-dom";
-import Success from "./Body/Success";
 import Cart from '../Cart/img/carritoVacio.png'
 
 
@@ -30,14 +29,15 @@ const CheckOut = () => {
         const date = new Date();
         const now = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
         
-        const orden = {buyer: buyer, items: productos, date: now,total: precioTotal()*1.21}
+        const orden = {buyer: buyer, items: productos, date: now, total: precioTotal()*1.21}
 
-        const db = getFirestore()
+        const db = getFirestore();
         const ordenCollection = collection (db, "pedidos");
 
         addDoc(ordenCollection, orden).then(({id}) => {
             setPedidoId(id);
-            clear();
+            console.log(pedidoId)
+            clear()          
         });
 
         if (productos.length === 0){

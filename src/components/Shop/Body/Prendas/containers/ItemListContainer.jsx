@@ -37,6 +37,9 @@ const ItemListContainer = () => {
                                     precio={prenda.precio}
                                     stock={prenda.stock}
                                     tamaño={prenda.tamaño}
+                                    talle1={prenda.talle1}
+                                    talle2={prenda.talle2}
+                                    talle3={prenda.talle3}
                                 />
                             </div>
                     </div>
