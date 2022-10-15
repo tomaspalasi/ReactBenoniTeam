@@ -6,7 +6,6 @@ import Dickens from '../BodyIndex/img/dickens.png'
 import FFitness from '../BodyIndex/img/full_fitness.png'
 import Gerseg from '../BodyIndex/img/gerseg.png'
 
-
 const BodyIndex = () => {
  
         let titulo = "BENONI TEAM - C.E.A.R.D.";
