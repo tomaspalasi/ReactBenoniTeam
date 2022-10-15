@@ -42,8 +42,8 @@ const ItemDetail = ({remera}) => {
               <div></div>
             </div>
           </div>
-          <div className="hoverDetail">
-          <figure id="productos">
+          <div id="productos" className="hoverDetail">
+          <figure>
             <img className="remerasBenoniDetail" src={remera.img1} alt="remeraImg" />
           </figure>
           <figure>
