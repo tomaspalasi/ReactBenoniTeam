@@ -66,4 +66,5 @@ nav {
   background-size: 200%;
   background-repeat: no-repeat;
   position: relative;
+  z-index:3;
 }
