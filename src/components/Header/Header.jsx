@@ -40,6 +40,7 @@ const Header = () => {
                                     <li><Link className="dropdown-item" to={"/shop/"}>INICIO</Link></li>
                                     <li><Link className="dropdown-item" to={"/shop/categoria/Niño"}>NIÑOS</Link></li>
                                     <li><Link className="dropdown-item" to={"/shop/categoria/Adulto"}>ADULTOS</Link></li>
+                                    <li><Link className="dropdown-item" to={"/shop/categoria/Accesorio"}>ACCESORIOS</Link></li>
                                 </ul>
                             </li>
                             <div className="nav-link position-absolute top-1 end-0">
