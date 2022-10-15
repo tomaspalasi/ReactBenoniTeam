@@ -33,22 +33,34 @@ const ItemCount = ({stock, initial, onAdd, remera}) => {
                 color: "black",
                 background: "grey",
             })
-            console.log ("Quedan " + (itemStock - cantidad) + " remeras")
         } else if (cantidad <= itemStock) {
-            onAdd(cantidad)
-            setItemStock(itemStock - cantidad);
-            setCantidad(0)
-            Swal.fire ({
-                title: "¡Agregaste " + cantidad + " productos, talle " + talle + ", al carrito!",
-                position: "top",
-                toast: true,
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                color: "black",
-                background: "#f9333b",
-            })
-            console.log ("Quedan " + (itemStock - cantidad) + " remeras")
+            if(talle){
+                onAdd(cantidad, talle)
+                setItemStock(itemStock - cantidad);
+                setCantidad(0)
+                Swal.fire ({
+                    title: "¡Agregaste " + cantidad + " productos, talle " + talle + ", al carrito!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "#f9333b",
+                })
+                console.log ("Quedan " + (itemStock - cantidad) + " remeras")
+            } else {
+                Swal.fire ({
+                    title: "¡Debes seleccionar el talle de tu remera!",
+                    position: "top",
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    color: "black",
+                    background: "grey",
+                })
+            }
         }
     }
 

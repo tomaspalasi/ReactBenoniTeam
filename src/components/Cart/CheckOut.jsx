@@ -8,7 +8,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import { addDoc, collection, getFirestore} from "firebase/firestore";
 import { Link } from "react-router-dom";
 import Cart from '../Cart/img/carritoVacio.png'
-
+import Success from "./Body/Success";
 
 
 const CheckOut = () => {
@@ -18,26 +18,24 @@ const CheckOut = () => {
     const [nombre, setNombre] = useState("")
     const [email, setEmail] = useState("")
     const [telefono, setTelefono] = useState("")
-    const [pedidoId, setPedidoId] = useState("")
- 
+    const [orderId, setOrderId] = useState("")
+    
     const enviarPedido = () => {
         const buyer = {name: nombre, email: email, phone: telefono};
         const productos = [];
         carrito.forEach((item) =>{
-            productos.push({id: item.id, title: item.nombre, price: item.precio})
+            productos.push({id: item.id, title: item.nombre, price: item.precio, talle: item.talle})
         })
         const date = new Date();
         const now = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
         
         const orden = {buyer: buyer, items: productos, date: now, total: precioTotal()*1.21}
-
+        
         const db = getFirestore();
-        const ordenCollection = collection (db, "pedidos");
-
+        const ordenCollection =  collection(db, "pedidos");
         addDoc(ordenCollection, orden).then(({id}) => {
-            setPedidoId(id);
-            console.log(pedidoId)
-            clear()          
+            setOrderId(id);
+            clear();
         });
 
         if (productos.length === 0){
@@ -73,15 +71,15 @@ const CheckOut = () => {
                 <div>
                     <div className="mb-3">
                         <label for="nombre" className="form-label">Nombre</label>
-                        <input type="text" className="form-control" id="nombreInput" onInput={(e) => setNombre (e.target.value)}/>
+                        <input type="text" className="form-control" id="nombreInput" required onInput={(e) => setNombre (e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <label for="telefono" className="form-label">Telefono</label>
-                        <input type="text" className="form-control" id="telefonoInput" onInput={(e) => setTelefono (e.target.value)}/>
+                        <input type="text" className="form-control" id="telefonoInput" required onInput={(e) => setTelefono (e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <label for="email" className="form-label">Email</label>
-                        <input type="text" className="form-control" id="emailInput"  onInput={(e) => setEmail (e.target.value)}/>
+                        <input type="text" className="form-control" id="emailInput" required onInput={(e) => setEmail (e.target.value)}/>
                     </div>
                         <Link id="enviarPedido" className="btn btn-primary" onClick={enviarPedido} to="/success/">Enviar Pedido</Link>
                 </div>
@@ -97,7 +95,7 @@ const CheckOut = () => {
                                             nombre={prenda.nombre}
                                             precio={prenda.precio}
                                             stock={prenda.stock}
-                                            size={prenda.size}
+                                            size={prenda.talle}
                                             cantidad={prenda.cantidad}
                                             />
                                     </div>
@@ -110,8 +108,8 @@ const CheckOut = () => {
                 </div>
                 </div>
             </form>
-            :
-                <div>
+            : orderId !== "" ? <Success id={orderId} /> 
+            : <div>
                     <div className="carritoEmptyText">
                         <h1>¡Tu carrito se encuentra vacio!</h1>
                         <h3>¡Corré a buscar tu merch!</h3>

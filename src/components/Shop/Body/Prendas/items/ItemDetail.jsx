@@ -26,8 +26,8 @@ const ItemDetail = ({remera}) => {
 
   const {addItem} = useContext(CartContext);
   
-  const onAdd = (cantidad) => {
-    addItem(remera, cantidad);
+  const onAdd = (cantidad, talle) => {
+    addItem(remera, cantidad, talle);
   }
 
   return (

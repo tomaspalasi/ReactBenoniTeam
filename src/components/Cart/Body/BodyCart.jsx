@@ -294,6 +294,7 @@ const BodyCart = () => {
                                         precio={prenda.precio}
                                         stock={prenda.stock}
                                         size={prenda.size}
+                                        talle={prenda.talle}
                                         cantidad={prenda.cantidad}
                                     />
                                 </div>

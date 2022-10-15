@@ -7,20 +7,32 @@ export const CartContext = createContext([]);
 const CarritoApp = ({children}) => {
 
     const [carrito, setCarrito] = useState([]);
+    const key = Math.floor(Math.random()*1000)
 
-    const addItem = (remera, cantidad) => {
-        if (isInCart(remera.id)){
-            let producto = carrito.find(prod => prod.id === remera.id);
-            carrito[carrito.indexOf(producto)].cantidad +=cantidad;
+    const addItem = (remera, cantidad, talle) => {
+
+        const idNew = remera.id + key
+
+        if (isKeyInCart(remera.id) && isTalleInCart(talle)){
+            let producto = carrito.find(prod => prod.talle === talle);
+            carrito[carrito.indexOf(producto)].cantidad += cantidad;
             setCarrito([...carrito]);
         } else{
-            setCarrito([...carrito, {...remera, cantidad:cantidad}])
+            setCarrito([...carrito, {...remera, cantidad:cantidad, talle:talle, id: idNew, key: remera.id}])
         }
         console.log(carrito)
     }
 
     const isInCart = (id) => {
         return carrito.some(remera => remera.id===id)
+    }
+
+    const isKeyInCart = (key) => {
+        return carrito.some(remera => remera.key===key)
+    }
+
+    const isTalleInCart = (talle) => {
+        return carrito.some(remera => remera.talle===talle)
     }
 
     const clear = () => {

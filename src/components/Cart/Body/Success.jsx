@@ -4,8 +4,9 @@ import Logo from '../../Header/img/benoni.png'
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Foter";
 
-const Success = () => {
 
+const Success = ({id}) => {
+    
         let titulo = "¡Muchas gracias por realizar tu pedido";
         let descripcion = "Pronto te estará llegando un email con los datos de entrega.";
 
@@ -19,7 +20,7 @@ const Success = () => {
                                     <div className="contLogoBodyIndex">
                                         <img className="logoBodyIndex"src={Logo} alt="logoBenoni"/>
                                     </div>
-                                <h3 className="descripcionIndex">{descripcion}</h3>
+                                <h3 className="descripcionIndex">{descripcion} {id}</h3>
                             </div>
                         </div>
                     </div>

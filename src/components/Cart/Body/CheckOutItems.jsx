@@ -66,13 +66,13 @@ const CheckOutItems = (prendas) => {
             />
           </div>
           <div className="contenidoBox">
-            <h3 className="tituloRemeraCheckOut">{prendas.nombre}</h3>
+            <h3 className="tituloRemera">{prendas.nombre} / </h3>
           </div>
           <div className="contenidoBox">
-            <p className="tituloRemeraCheckOut">{prendas.size}</p>
+            <p className="tituloRemeraCheckOut">{prendas.size} / </p>
           </div>
           <div className="contenidoBox">
-            <p className="tituloRemeraCheckOut">${prendas.precio} x {prendas.cantidad}</p>
+            <p className="tituloRemeraCheckOut">${prendas.precio} x {prendas.cantidad} / </p>
           </div>
           <div className="contenidoBox">
             <p className="tituloRemeraCheckOut" id="totalPrice">

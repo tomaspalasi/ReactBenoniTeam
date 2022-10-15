@@ -42,6 +42,9 @@ const CartItems = (prendas) => {
     setCarrito(remove)
   }
 
+  const idProd = prendas.id
+  const idProducto = idProd.substring(0, idProd.length - 3)
+
   return (
     <div>
       <div className="remerasBox">
@@ -61,9 +64,10 @@ const CartItems = (prendas) => {
       <p className="tituloRemera">{prendas.size}</p>
       <p className="tituloRemera">${prendas.precio}</p>
       <p className="tituloRemera">Cantidad: {prendas.cantidad}</p>
+      <p className="tituloRemera">Talle: {prendas.talle}</p>
       <p className="tituloRemera" id="totalPrice">Total: ${prendas.cantidad * prendas.precio}</p>
       <div className="itemCount">
-        <Link to={"/shop/prendadetalle/" + prendas.id} className="linkDetalle">
+        <Link to={"/shop/prendadetalle/" + idProducto} className="linkDetalle">
           <button className="btnDetalle">VER DETALLE</button>
         </Link>
       </div>
