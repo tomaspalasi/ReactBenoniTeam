@@ -78,7 +78,7 @@ const ItemCount = ({stock, initial, onAdd, remera}) => {
                 <h4>Talles disponibles:</h4>
                     <button onClick={talleSelect} type="button" id='botonTalle' className="btn btn-primary" value={remera.talle1}>{remera.talle1}</button>
                     <button onClick={talleSelect} type="button" id='botonTalle' className="btn btn-primary" value={remera.talle2}>{remera.talle2}</button>
-                    <button onClick={talleSelect} type="button" id='botonTalle' className="btn btn-primary botontalle" value={remera.talle3}>{remera.talle3}</button>
+                    <button onClick={talleSelect} type="button" id='botonTalle' className="btn btn-primary" value={remera.talle3}>{remera.talle3}</button>
             </div>
             <div>
                 <h4>Stock disponible: {itemStock}</h4>
