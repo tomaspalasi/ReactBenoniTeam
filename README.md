@@ -20,10 +20,14 @@ El sitio, desarrollado en React JS, cuenta con la posibilidad de observar los pr
 
 ### Por ID
 
-Al seleccionar el botón de "VER DETALLE", mostrará al usuario una versión detallada del producto que cuenta con el stock disponible, una segunda imagen y la posibilidad de agregar al carrito. Próximamente se estará agregando la selección de talles.
+Al seleccionar el botón de "VER DETALLE", mostrará al usuario una versión detallada del producto que cuenta con el stock y talles dispnibles, una segunda imagen y la posibilidad de agregar al carrito.
 
 ### Por CATEGORÍA
 
-También podra acceder a las prendas a través del filtro de CATEGORÍA, donde, hasta el momento, se encuetran las categorÍas NIÑO y ADULTO, con sus respectivos productos.
+También podra acceder a las prendas a través del filtro de CATEGORÍA, donde se encuetran las categorÍas NIÑO, ADULTO y ACCESORIOS, con sus respectivos productos.
+
+## CheckOut
+
+Para finalizar la orden, se dirige al usuario al apartado CHECK OUT, donde visualizará el total de su compra, incluyendo productos a solicitar y precio final. Tambien se incluye la posibilidad de retirar o eliminar productos de la orden. La misma será completada mediante un formulario, el cual sera enviado mediante FIREBASE, para llevar un control del mismo. Cabe destacar que finalizada la solicitud de orden, al cliente se le otorgará un numero de ID, para que el mismo pueda tener un seguimiento de su compra.
 
 ## Sitio desarrollado por Tomás Palasi
