@@ -19,8 +19,9 @@ const CheckOut = () => {
     const [email, setEmail] = useState("")
     const [telefono, setTelefono] = useState("")
     const [orderId, setOrderId] = useState("")
-    
+
     const enviarPedido = () => {
+
         const buyer = {name: nombre, email: email, phone: telefono};
         const productos = [];
         carrito.forEach((item) =>{
@@ -30,15 +31,17 @@ const CheckOut = () => {
         const now = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
         
         const orden = {buyer: buyer, items: productos, date: now, total: precioTotal()*1.21}
-        
-        const db = getFirestore();
-        const ordenCollection =  collection(db, "pedidos");
-        addDoc(ordenCollection, orden).then(({id}) => {
-            setOrderId(id);
-            clear();
-        });
 
-        if (productos.length === 0){
+        if (nombre === "" || telefono === "" || email === ""){
+            Swal.fire({
+                title: '¡Completá tus datos!',
+                text: '¡Por favor, completá los datos para poder enviarte tus productos!.',
+                icon: 'error',
+                color: "whitesmoke",
+                background: "rgb(32, 32, 32)",
+                confirmButtonColor: "#e0383f",
+            })
+        } else if (productos.length === 0){
             Swal.fire({
                 title: '¡Carrito Vacío!',
                 text: 'Tu carrito está vacío. ¡Corré a buscar nuestra merch!.',
@@ -47,22 +50,31 @@ const CheckOut = () => {
                 background: "rgb(32, 32, 32)",
                 confirmButtonColor: "#e0383f",
             })
-        } else {
+        } else {   
             Swal.fire({
-                title: '¡Muchas gracias por adquirir nuestra merch!',
+                title: '¡Muchas gracias por adquirir nuestra merch '+ nombre +'!',
                 text: 'Pronto te estará llegando un mail con los datos de envio.',
                 icon: 'success',
                 color: "whitesmoke",
                 background: "rgb(32, 32, 32)",
                 confirmButtonColor: "#e0383f",
             })
+            const db = getFirestore();
+    
+            const ordenCollection =  collection(db, "pedidos");
+    
+            addDoc(ordenCollection, orden).then((res) => {
+                setOrderId(res.id);
+                console.log(orderId);
+                clear();
+            });
         }
     }
 
     let precioTotal = () =>{
         return carrito.reduce((acumulador,elem) => acumulador + elem.precio * elem.cantidad, 0);
     }
-
+    
     return (
         <div>
         <Header/>
@@ -70,18 +82,18 @@ const CheckOut = () => {
             <form id="formCheckout">
                 <div>
                     <div className="mb-3">
-                        <label for="nombre" className="form-label">Nombre</label>
-                        <input type="text" className="form-control" id="nombreInput" required onInput={(e) => setNombre (e.target.value)}/>
+                        <label htmlFor="nombre" className="form-label">Nombre</label>
+                        <input type="text" className="form-control" id="nombreInput" required="required" onInput={(e) => setNombre (e.target.value)}/>
                     </div>
                     <div className="mb-3">
-                        <label for="telefono" className="form-label">Telefono</label>
-                        <input type="text" className="form-control" id="telefonoInput" required onInput={(e) => setTelefono (e.target.value)}/>
+                        <label htmlFor="telefono" className="form-label">Telefono</label>
+                        <input type="text" className="form-control" id="telefonoInput" required="required" onInput={(e) => setTelefono (e.target.value)}/>
                     </div>
                     <div className="mb-3">
-                        <label for="email" className="form-label">Email</label>
-                        <input type="text" className="form-control" id="emailInput" required onInput={(e) => setEmail (e.target.value)}/>
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <input type="text" className="form-control" id="emailInput" required="required" onInput={(e) => setEmail (e.target.value)}/>
                     </div>
-                        <Link id="enviarPedido" className="btn btn-primary" onClick={enviarPedido} to="/success/">Enviar Pedido</Link>
+                        <button type="button" id="enviarPedido" className="btn btn-primary" onClick={() => {enviarPedido()}}>Enviar Pedido</button>
                 </div>
                 <div id="carritoCheckOut">
                     {carrito.map(prenda => {

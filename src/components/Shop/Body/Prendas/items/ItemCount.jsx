@@ -48,10 +48,10 @@ const ItemCount = ({stock, initial, onAdd, remera}) => {
                     color: "black",
                     background: "#f9333b",
                 })
-                console.log ("Quedan " + (itemStock - cantidad) + " remeras")
+                console.log ("Quedan " + (itemStock - cantidad) + " productos")
             } else {
                 Swal.fire ({
-                    title: "¡Debes seleccionar el talle de tu remera!",
+                    title: "¡Debes seleccionar el talle de tu producto!",
                     position: "top",
                     toast: true,
                     showConfirmButton: false,
