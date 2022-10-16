@@ -27,9 +27,9 @@ const CartItems = (prendas) => {
   }, 2000);
 
   const eliminarPrenda = () =>{
-    const remove = carrito.filter(f => f.id !== prendas.id)
+    const remove = carrito.filter(f => f.nombre !== prendas.nombre) && carrito.filter(f => f.talle !== prendas.talle)
     Swal.fire ({
-        title: "¡Se borró del carrito la remera "+ prendas.nombre +"!",
+        title: "¡Se borró del carrito el producto "+ prendas.nombre +" talle: " + prendas.talle +" !",
         position: "top",
         toast: true,
         showConfirmButton: false,
@@ -38,7 +38,7 @@ const CartItems = (prendas) => {
         color: "black",
         background: "grey",
     })
-    console.log ("Se borró del carrito la remera: " + prendas.nombre)
+    console.log("Se borró del carrito el producto: " + prendas.nombre + " talle: " + prendas.talle);
     setCarrito(remove)
   }
 
@@ -72,7 +72,7 @@ const CartItems = (prendas) => {
         </Link>
       </div>
       <div className="btnEliminar">
-        <button className="btnDetalle" onClick={eliminarPrenda}>ELIMINAR PRODUCTO</button>
+        <button className="btnDetalle" onClick={()=>{eliminarPrenda()}}>ELIMINAR PRODUCTO</button>
       </div> 
     </div>
   );

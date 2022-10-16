@@ -1,10 +1,6 @@
 import React from "react";
 import '../css/cart.css'
 import Logo from '../../Header/img/benoni.png'
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Foter";
-
-
 
 const Success = ({id}) => {
     
